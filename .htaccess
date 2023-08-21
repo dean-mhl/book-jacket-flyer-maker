@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^flyer/(.*)$ ./flyer.php?url=$1

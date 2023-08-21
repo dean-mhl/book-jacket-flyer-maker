@@ -1,0 +1,398 @@
+html, body {
+    margin: 0;
+}
+
+/**
+    * Use the default user interface font in all browsers (opinionated).
+    * Taken from https://unpkg.com/. See Bootstrap 4 for alternate sensible defaults.
+    */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus,
+button:active {
+    -moz-outline: 0 !important;
+    -ms-outline:0;
+    -o-outline: 0;
+    -webkit-outline: 0;
+    outline: none !important;
+}
+
+html {
+    font-family:
+    system-ui,
+    /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI",
+    /* Android 4+ */ "Roboto",
+    /* Ubuntu 10.10+ */ "Ubuntu",
+    /* Gnome 3+ */ "Cantarell",
+    /* KDE Plasma 5+ */ "Noto Sans",
+    /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+/**
+    * Use the default monospace user interface font in all browsers (opinionated).
+    */
+
+code,
+kbd,
+samp,
+pre {
+    font-family:
+    /* macOS 10.10+ */ "Menlo",
+    /* Windows 6+ */ "Consolas",
+    /* Android 4+ */ "Roboto Mono",
+    /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+    /* KDE Plasma 5+ */ "Noto Mono",
+    /* KDE Plasma 4+ */ "Oxygen Mono",
+    /* Linux/OpenOffice fallback */ "Liberation Mono",
+    /* fallback */ monospace,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+}
+
+
+body {
+    min-width: 1280px;
+}
+
+#container {
+    width: 1262px;
+}
+
+#left-panel {
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    width: 530px;
+}
+
+#help-button {
+    float: right;
+    position: relative;
+    top: 10px;
+}
+
+#step-1 {
+    height: 120px;
+    position: relative;
+}
+
+.instructions {
+    width: 402px;
+    float: right;
+}
+
+#isbn-loading-options {
+    -webkit-box-shadow: -21px -4px 0px -20px #ddd;
+    box-shadow: -21px -4px 0px -20px #ddd;
+    border-left: 0;
+    padding-left: 8px;
+
+}
+
+#isbn-loading-options div {
+    height: 34px;
+    font-size: 14px;
+}
+
+#isbn-loading-options div:first-child {
+    border-top: none;
+}
+
+#isbns-container {
+    float: left;
+}
+
+#isbns {
+    font-family: monospace;
+    width: 114px;
+    resize: vertical;
+    height: 88px;
+    font-size: 12px;
+}
+
+#custom-url {
+    width: 278px;
+}
+
+.load-button {
+    float: right;
+    position: relative;
+    top: -1px;
+}
+
+input#name {
+    width: 176px;
+}
+
+span.loader {
+    /* not sure this is the best way to do this... */
+    position: relative;
+    right: -14px;
+    margin-left: -14px;
+    display: inline-block;
+    width: 16px;
+}
+
+#clear-button {
+    position: absolute;
+    bottom: 0;
+    right: 22px;
+}
+
+
+#font-picker-container {
+    min-height: 39px;
+    position: relative;
+}
+
+#clear-cookie {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    font-size: 12px;
+}
+
+h2#step-2 {
+    clear: both;
+}
+
+.step-3-buttons {
+    position: relative;
+}
+
+button#cancel-button {
+    position: absolute;
+    right: 0;
+}
+
+#webpage-option {
+    display: none;
+    margin-right: .5em;
+}
+
+#flyer-url-container {
+    position: relative;
+    visibility: hidden;
+}
+
+#header-text {
+    width: 100%;
+    height: 60px;
+}
+
+hr {
+    border: none;
+    /*  height: 1px; */
+    /* top    */ border-top: 1px solid #ccc;
+    /* middle */ background-color: #ddd; color: #ddd;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#book {
+    width: 692px;
+    float: right;
+}
+
+#header {
+    height: 100px;
+    width: 690px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: "Times New Roman";
+    white-space: pre-wrap;
+}
+
+#sortable {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(5, 130px);
+    position: relative;
+}
+
+#sortable li {
+  /* transition: all .5s; */
+  cursor: move;
+}
+
+.sortable-drag {
+   scale: 66%   
+}    
+.sortable-drag img {
+ opacity: .3;
+}
+
+.my-handle {
+	cursor: move;
+	cursor: -webkit-grabbing;
+}
+
+.ui-state-default {
+    border: 0;
+    background: #fff;
+}
+
+#book img {
+    max-width: 132px;
+}
+
+#footer {
+    text-align: center;
+    clear: both;
+}
+
+.load-button a {
+    text-decoration: none;
+    font-size: 1.25em;
+    color: #555555b3;
+}
+
+.table-window {
+    overflow: auto;
+    max-height: 150px;
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 14px;
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #009879;
+    color: #ffffff;
+}
+
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #009879;
+
+    padding: 2px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F2F3C0;
+    background-color: #f3f3f3;
+}
+
+td {
+    padding: 4px;
+}
+
+td.flyer-name, td.last-modified {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+th.flyer-name, td.flyer-name {
+    width: 42%;
+}
+
+th.operations, td.operations {
+    white-space: nowrap;
+}
+
+td.operations {
+    text-align: center;
+}
+
+td.last-modified {
+    text-align: center;
+}
+
+td button {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media print {
+    html, body {
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    width: 100%;
+    min-width: unset !important;
+    }
+
+    .noprint {
+    display: none !important;
+    }
+
+    #container {
+    width: inherit;
+    }
+
+    #book {
+    width: 100%;
+    float: none;
+    }
+
+    #header {
+    display: block;
+    }
+
+    #sortable {
+    width: 100%;
+    column-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    }
+
+    li {
+    margin-bottom: 0.05in;
+    }
+
+    img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    }
+
+}
