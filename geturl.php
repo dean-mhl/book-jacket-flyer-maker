@@ -7,15 +7,9 @@
     exit();
   }
 
-  if(isset($_POST['id'])){
-    $id = $_POST['id'];
-  }
-
   $query = "SELECT url FROM flyers ORDER BY id DESC LIMIT 0,1";
 
   if ($stmt = $con->prepare($query)) {
-
-    $stmt->bind_param('i', $id);
 
     $stmt->execute();
     $stmt->bind_result($url);
