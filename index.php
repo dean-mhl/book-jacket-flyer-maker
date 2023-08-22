@@ -1,21 +1,13 @@
 <?php
 
  /*
-
   TODO:
-
-    * add all this to github?
-    * see about making images optimized for various social media (done)
     * possibly add widget/embed code?
     * make page or modal window that shows the whole list of saved flyers, maybe with a column that shows the webpages
     * make a button that changes printout from a 5 x 4 grid to something else?
-    * make it so when a flyer is updated, its html page gets updated, too! (fixed?)
-    * when view/edit button is clicked and flyer is loaded, resize oversized titles with textfill or something (fixed?)
-    * don't hard code webserver address
-    * saved html includes covers below the red line; is this okay?
     * test to ensure mod_rewrite is enabled and, if it's not, fall back to querystrings in urls of saved flyers
     * create an install page that prompts the user to enter database credentials, catalog url, and cover art source?
-    * make a version that doesn't save and save with all MVLC libraries?
+    * make a version that doesn't save so it can be shared with MVLC libraries?
   */
 
     //Connection to MySQL
