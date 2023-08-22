@@ -140,6 +140,9 @@
             </table>
           </div>
         </div>
+        <footer>
+          <a href="https://github.com/dean-mhl/book-jacket-flyer-maker">source code on GitHub</a>
+        </footer>
       </div> <!-- end left-panel -->
 
       <div id="book">

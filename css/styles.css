@@ -87,6 +87,12 @@ body {
     width: 530px;
 }
 
+footer {
+    margin: 20px 0;
+    text-align: right;
+    font-size: 12px;
+}
+
 #help-button {
     float: right;
     position: relative;
