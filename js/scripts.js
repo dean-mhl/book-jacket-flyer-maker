@@ -470,7 +470,8 @@ $(document).ready(function() {
         });
     }
 
-    $("#help-button").click(function() {
+    $("#help-button").click(function(e) {
+		e.preventDefault();
         $("#help").dialog({
             resizable: false,
             height: "auto",
@@ -746,7 +747,8 @@ $(document).ready(function() {
     });
 
     // load resets
-    $("#new-titles-reset").on("click", function() {
+    $("#new-titles-reset").on("click", function(e) {
+        e.preventDefault();		
         counter_new_titles = 0;
         $("button#new-titles").text("Load");
         $(this).fadeTo(500, 0, function() {
@@ -754,7 +756,8 @@ $(document).ready(function() {
         });
     });
 
-    $("#teen-room-titles-reset").on("click", function() {
+    $("#teen-room-titles-reset").on("click", function(e) {
+		e.preventDefault();
         counter_teen_room_titles = 0;
         $("button#teen-room-titles").text("Load");
         $(this).fadeTo(500, 0, function() {
@@ -762,7 +765,8 @@ $(document).ready(function() {
         });
     });
 
-    $("#custom-catalog-url-reset").on("click", function() {
+    $("#custom-catalog-url-reset").on("click", function(e) {
+	    e.preventDefault();
         counter_custom_catalog_url = 0;
         $("button#custom-catalog-url").text("Load");
         $(this).fadeTo(500, 0, function() {
