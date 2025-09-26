@@ -14,7 +14,7 @@ $(document).ready(function() {
             method: "post",
             success: function(response) {
                 var url = response;
-                $("#flyer-url-container").css("visibility", "visible");
+                $("#flyer-url-container, #copy-iframe-code-button").css("visibility", "visible");
                 $("#flyer-url").attr("href", currentUrl + "flyer/" + url).text(currentUrl + "flyer/" + url);
             }
         });
@@ -667,30 +667,37 @@ $(document).ready(function() {
                 var has_url = response[0].has_url;
                 var url = response[0].url;
                 if (has_url == 1) {
-                    $("#flyer-url-container").css("visibility", "visible");
-                    $("#flyer-url").attr("href", currentUrl + "flyer/" + url).text(currentUrl + "flyer/" + url);
+                    var iframe_value = '<iframe height=1800px width=100% style="border: none; width: 100% !important; display: block !important; margin: 0 !important;" src="https://mhl.org/covers/flyer/'+ url + '"></iframe>';
+                    $("#flyer-url-container, #copy-iframe-code-button").css("visibility", "visible");
+                    // $("#flyer-url").attr("href", "https://mhl.org/temp/covers/flyer/" + url).text("https://mhl.org/temp/covers/flyer/" + url);
+                    $("#flyer-url").attr("href", window.location.href + "flyer/" + url).text(window.location.href + "flyer/" + url);
+                    $("#copy-iframe-code-button").click(function (event) {
+                       event.preventDefault();
+                       navigator.clipboard.writeText(iframe_value);
+
+
+                      var notificationTag = $("div.copy-notification");
+                      var notificationText = "iframe code copied to clipboard!"
+                      if (notificationTag.length == 0) {
+                           notificationTag = $("<div/>", { "class": "copy-notification", text: notificationText });
+                           $("body").append(notificationTag);
+
+                           notificationTag.fadeIn("slow", function () {
+                           setTimeout(function () {
+                              notificationTag.fadeOut("slow", function () {
+                                  notificationTag.remove();
+                              });
+                          }, 1000);
+                        });
+                      }
+
+
+                    });
                 } else {
                     $("#flyer-url").text("");
-                    $("#flyer-url-container").css("visibility", "hidden");
+                    $("#flyer-url-container, #copy-iframe-code-button").css("visibility", "hidden");
                 }
-                var header_css = response[0].header_css;
-                var len = response.length;
-                for (var i = 1; i < len; i++) {
-                    var response_isbn = response[i].isbn;
-                    var response_link = response[i].link;
-                    var li_str = '<li class="ui-state-default" data-id="' + i + '" id="' + response_isbn + '">' +
-                        '<img src="' + response_link + '" alt="cover for ISBN ' + response_isbn + '">' +
-                        '</li>';
-                    $("#sortable").append(li_str);
-                }
-                $("#header-text").val(header_text);
-                $("input#name").val(name_text);
-                $("input#flyer-id").val(edit_id);
-                if (header_css.length > 0 && header_css != "Select a font") {
-                    $("#font-picker").val(header_css).trigger("change"); // this does it, but we need to account for default for no selection
-                } else {
-                    $("#font-picker").val("Times New Roman:400").trigger("change"); // the default -- I should make this a variable
-                }
+
                 textUpdate();
                 red_line();
             }
