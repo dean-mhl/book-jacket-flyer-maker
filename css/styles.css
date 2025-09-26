@@ -198,6 +198,11 @@ button#cancel-button {
     margin-right: .5em;
 }
 
+#webpage-info {
+   margin: 2em 0;
+   position: relative;
+}
+
 #flyer-url-container {
     position: relative;
     visibility: hidden;
