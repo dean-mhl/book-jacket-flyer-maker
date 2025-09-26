@@ -106,7 +106,10 @@
             <div>
               <button type="button" title="Just the first three rows of covers are used." id="download-image-button-instagram"><span class="fa fa-brands fa-facebook"></span> <span class="fa fa-brands fa-instagram"></span> Download for social media</button>
             </div>
-            <p id="flyer-url-container">webpage: <a target="_blank" href="" id="flyer-url"></a></p>
+            <div id="webpage-info">
+              <span id="flyer-url-container">webpage: <a target="_blank" href="" id="flyer-url"></a></span>
+              <button type="button" id="copy-iframe-code-button">Copy iframe code</button>
+            </div>
         </form>
 <?php
   $sql = "SELECT DISTINCT f.id, f.name, f.has_url, f.timestamp FROM flyers f INNER JOIN covers c ON f.id = c.flyer_id ORDER BY f.timestamp DESC";
