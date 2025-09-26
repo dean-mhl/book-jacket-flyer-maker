@@ -203,6 +203,13 @@ button#cancel-button {
     visibility: hidden;
 }
 
+#copy-iframe-code-button {
+    position: absolute;
+    visibility: hidden;
+    right: 0;
+    font-size: 12px;
+}
+
 #header-text {
     width: 100%;
     height: 60px;
